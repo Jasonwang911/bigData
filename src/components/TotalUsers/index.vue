@@ -52,7 +52,7 @@ export default {
         {
           type: 'bar',
           stack: '总量',
-          data: [5000],
+          data: [600],
           itemStyle: {
             color: '#eee'
           }
