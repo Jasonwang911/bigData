@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <v-chart
+    <!-- <v-chart
       :options="data"
     />
-    <ve-line :data="chartData"></ve-line>
+    <ve-line :data="chartData"></ve-line> -->
   </div>
 </template>
 
