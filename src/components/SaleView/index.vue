@@ -36,7 +36,7 @@
       <template>
         <div class="sales-view-chart-wrapper">
           <v-chart
-          :option="chartOption"
+          :options="chartOption"
           />
           <div class="sales-view-list">
             <div class="sales-view-title">排行榜</div>
@@ -88,28 +88,84 @@ export default {
           }
         }]
       },
-      chartOption: {},
+      chartOption: {
+        title: {
+          text: '年度销售额',
+          textStyle: {
+            fontSize: 12,
+            color: '#666'
+          },
+          left: 25,
+          top: 20
+        },
+        xAxis: {
+          type: 'category',
+          data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+          axisTick: {
+            alignWithLabel: true,
+            lineStyle: {
+              color: '#999'
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#999'
+            }
+          },
+          axisLabel: {
+            color: '#333'
+          }
+        },
+        yAxis: {
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          splitLine: {
+            lineStyle: {
+              type: 'dotted',
+              color: '#eee'
+            }
+          }
+        },
+        series: [
+          {
+            type: 'bar',
+            barWidth: '35%',
+            data: [200, 250, 300, 350, 300, 250, 200, 250, 350, 300, 250, 350]
+          }
+        ],
+        color: ['#3398DB'],
+        grid: {
+          top: 70,
+          left: 60,
+          right: 60,
+          bottom: 50
+        }
+      },
       rankData: [
         {
           id: 1,
           no: 1,
           name: '肯德基',
-          money: 1111
+          money: 1254
         }, {
           id: 2,
-          no: 1,
-          name: '肯德基',
-          money: 1111
+          no: 2,
+          name: '麦当劳',
+          money: 6541
         }, {
           id: 3,
-          no: 1,
-          name: '肯德基',
-          money: 1111
+          no: 3,
+          name: '汉堡王',
+          money: 587
         }, {
           id: 4,
-          no: 1,
-          name: '肯德基',
-          money: 1111
+          no: 4,
+          name: '炸鸡',
+          money: 22
         }
       ]
     }
